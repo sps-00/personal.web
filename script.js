@@ -65,7 +65,15 @@ $("#validationName").keyup(function () {
     $("#name-feed").css("class", "invalid-feedback");
     nameValidated = false;
   }
-
+  $("#validationName").keypress(function (e) {
+    if (
+      (e.charCode >= 33 && e.charCode <= 64) ||
+      (e.charCode >= 91 && e.charCode <= 96) ||
+      (e.charCode >= 123 && e.charCode <= 126)
+    ) {
+      e.preventDefault();
+    }
+  });
   if ($("#validationName").val().length < 4) {
     $("#name-feed").show();
     $("#name-feed").text("Name should have at least 3 characters");
