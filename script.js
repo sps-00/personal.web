@@ -30,9 +30,9 @@ $("#validationMail").blur(function () {
 });
 
 $("#validationMessage").blur(function () {
-  if ($("#validationMessage").val().length < 50) {
+  if ($("#validationMessage").val().length < 20) {
     $("#msg-feed").show();
-    $("#msg-feed").text("Message length must be at least 50 characters");
+    $("#msg-feed").text("Message length must be at least 20 characters");
     $("#msg-feed").css("class", "invalid-feedback");
     messageValidated = false;
   } else {
